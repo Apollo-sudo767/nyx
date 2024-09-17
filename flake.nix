@@ -4,7 +4,7 @@
   # nixConfig here only affects flake itself
   nixConfig = {
     # substituters will be default when fetching packages
-    # nux com   extra-substituter = [munity's cache server
+    # nix com   extra-substituter = [munity's cache server
     extra-substituters = [
       "https://nix-community.cachix.org"
     ];
@@ -16,7 +16,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nxpkgs.follows = "nixpkgs";
+    #  home-manager.inputs.nxpkgs.follows = "nixpkgs";
 
     # Add additional inputs if necessary
   };
