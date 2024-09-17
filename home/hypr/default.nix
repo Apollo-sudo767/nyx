@@ -13,12 +13,12 @@
   home.file.".config/waybar/style.css".source = ./waybar/style.css;
   home.file.".config/waybar/style.css.bac".source = ./waybar/style.css.bac;
   home.file.".config/hypr/hyprpaper.conf".source = ./hyprpaper.conf;
-  home.file.".config/hypr/scripts" = {
-    source = ./scripts;
-    # copy the scripts directory recursively
-    recursive = true;
-    executable = true;  # make all scripts executable
-  };
+  # home.file.".config/hypr/scripts" = {
+  #   source = ./scripts;
+  #    # copy the scripts directory recursively
+  #    recursive = true;
+  #    executable = true;  # make all scripts executable
+  #  };
 
 
   }
