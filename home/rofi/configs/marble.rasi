@@ -7,12 +7,12 @@
 * {
     font:   "SF Mono 12";
 
-    bg0:     #F8F8F8;
-    bg1:     #E0E0E0;
-    fg0:     #2D2D2D;
+    bg0:     #f5f0e1;
+    bg1:     #c3b299;
+    fg0:     #4a4a4a;
 
-    accent-color:     #D0D0D0;
-    urgent-color:     #2D2D2D;
+    accent-color:     #d8ca61;
+    urgent-color:     #3d3d3d;
 
     background-color:   transparent;
     text-color:         @fg0;
