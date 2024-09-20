@@ -47,6 +47,8 @@
       extraPackages = with pkgs; [
         vaapiVdpau
         libvdpau-va-gl
+        vulkan-loader
+        #  pkgsi686Linux.vulkan-loader
       ];
       extraPackages32 = with pkgs.pkgsi686Linux; [ libva ];
       # setLdLibraryPath = true;
