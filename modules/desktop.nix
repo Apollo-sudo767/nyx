@@ -127,6 +127,7 @@
     playerctl
     github-desktop
     gh
+    cmus
   ];
   
   # Kitty Config
