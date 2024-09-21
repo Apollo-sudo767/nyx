@@ -128,6 +128,8 @@
     github-desktop
     gh
     cmus
+    gnutar
+    gzip
   ];
   
   # Kitty Config
