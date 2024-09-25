@@ -15,9 +15,5 @@
     ../../home/rofi
     ../../home/terminals
   ];
- 
-  programs.git = {
-    userName = "Apollo-sudo767";
-    userEmail = "fireshifter767@gmail.com";
-  };
+   
 }
