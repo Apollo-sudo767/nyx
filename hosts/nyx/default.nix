@@ -9,6 +9,7 @@
     [
       ../../modules/desktop.nix
       ../../modules/hyprland.nix
+      ../../modules/i3.nix
 
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
@@ -26,6 +27,11 @@
   networking.hostName = "nyx"; # Define your hostname.
   
   # Display Manager
+  services.xserver = {
+    enable = true;
+    displayManager.gdm.enable = true;
+    desktopManager.gnome.enable = true; # Optional, if you want to use GNOME as your desktop environment
+  };
   
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
