@@ -131,6 +131,8 @@
     cmus
     gnutar
     gzip
+    vulkan-tools
+    mesa
   ];
   
   # Kitty Config
