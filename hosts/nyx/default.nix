@@ -26,11 +26,20 @@
 
   networking.hostName = "nyx"; # Define your hostname.
   
-  # Display Manager
-  services.xserver = {
-    enable = true;
-    displayManager.gdm.enable = true;
-    desktopManager.gnome.enable = true; # Optional, if you want to use GNOME as your desktop environment
+  # Services
+  services = {
+    xserver = {
+      enable = true;
+      layout = "us";
+      xkbVariant = "";
+      excludePackages = [ pkgs.xterm ];
+      videoDrivers = ["nvidia"];
+      libinput.enable = true;
+      displayManager.gdm.enable = true;
+    };
+    dbus.enable = true;
+    gvfs.enable = true;
+    tumbler.enable = true;
   };
   
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -70,24 +79,6 @@
     };
   };
 
-  # Services
-  services = {
-    xserver = {
-      enable = true;
-      layout = "us";
-      xkbVariant = "";
-      excludePackages = [ pkgs.xterm ];
-      videoDrivers = ["nvidia"];
-      libinput.enable = true;
-      displayManager.lightdm = {
-        enable = false;
-        #  wayland = true;
-      };
-    };
-    dbus.enable = true;
-    gvfs.enable = true;
-    tumbler.enable = true;
-  };
   
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
