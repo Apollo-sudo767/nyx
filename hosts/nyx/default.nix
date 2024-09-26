@@ -42,14 +42,13 @@
   hardware = {
     graphics = {
       enable = true;
-      driSupport = true;
-      driSupport32Bit = true;
+      # driSupport = true;
+      # driSupport32Bit = true;
       extraPackages = with pkgs; [
         vaapiVdpau
         libvdpau-va-gl
         vulkan-loader
         vulkan-headers
-        nvidiaPackages.stable
         #  pkgsi686Linux.vulkan-loader
       ];
       extraPackages32 = with pkgs.pkgsi686Linux; [ libva ];
