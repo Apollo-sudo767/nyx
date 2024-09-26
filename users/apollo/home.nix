@@ -14,6 +14,7 @@
     ../../home/programs
     ../../home/rofi
     ../../home/terminals
+    ../../home/i3
   ];
   
   programs.git = {
