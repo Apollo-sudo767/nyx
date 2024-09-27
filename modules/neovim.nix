@@ -19,7 +19,7 @@
     vimPlugins.feline-nvim
     vimPlugins.nvim-cokeline
     vimPlugins.nerdtree
-    vimPlugins.floaterm
+    vimPlugins.vim-floaterm
     vimPlugins.tokyonight-nvim
   ];
 }
