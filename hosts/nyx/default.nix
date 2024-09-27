@@ -10,6 +10,7 @@
       ../../modules/desktop.nix
       ../../modules/hyprland.nix
       ../../modules/i3.nix
+      ../../modules/neovim.nix
 
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
