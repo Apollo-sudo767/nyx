@@ -48,7 +48,7 @@ _: {
         highlightModified = "icon";
       };
       diagnostics.enable = true;
-    };
+    }; 
 
     nvim-autopairs.enable = true;
     nvim-colorizer.enable = true;

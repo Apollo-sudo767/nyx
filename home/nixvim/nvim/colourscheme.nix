@@ -1,9 +1,8 @@
 {
-  colorschemes.catppuccin = {
+  colorschemes.tokyonight = {
     enable = true;
     settings = {
-      background.light = "macchiato";
-      background.dark = "mocha";
+      transparent = true;
     };
   };
 }
