@@ -1,25 +1,40 @@
-{ config, pkgs, ... }:
+{ pkgs, pkgs-stable, config, lib, inputs, ... }:
 
+let
+  inherit (lib) mkIf mkEnableOption mkOption types;
+  cfg = config.my.home.editors.neovim;
+in
 {
-
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
+  options.my.home.editors.neovim = {
+    enable = mkEnableOption "Neovim text editor home options";
+    colorScheme = mkOption {
+      type = types.enum [ "rose-pine" "catppuccin" "dracula" ];
+      default = "rose-pine";
+      description = lib.mkDoc ''
+        Which color theme to use.
+      '';
+    };
   };
-  
-  
-  # Optionally install additional tools used by plugins
-  environment.systemPackages = with pkgs; [
-    fzf  # Required by fzf-vimi
-    vimPlugins.nvim-surround
-    vimPlugins.fzf-vim
-    vimPlugins.nvim-lspconfig
-    vimPlugins.dashboard-nvim
-    vimPlugins.lspsaga-nvim
-    vimPlugins.feline-nvim
-    vimPlugins.nvim-cokeline
-    vimPlugins.nerdtree
-    vimPlugins.vim-floaterm
-    vimPlugins.tokyonight-nvim
+
+  imports = [
+    inputs.nixvim.homeManagerModules.nixvim
   ];
+
+  config = mkIf cfg.enable {
+    home.packages = with pkgs; [
+      lua-language-server
+      nil
+      wget
+    ];
+
+    programs.nixvim = _: {
+      _module.args.pkgs-stable = pkgs-stable;
+      imports = [
+        ../home/nixvim
+        { config.my.nixvim.theme.colorScheme = cfg.colorScheme; }
+      ];
+      enable = true;
+      defaultEditor = true;
+    };
+  };
 }
