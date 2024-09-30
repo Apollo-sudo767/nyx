@@ -9,7 +9,7 @@
     ../../home/core.nix
     
     # All the other stuff in the home folder
-    # ../../home/neovim
+    ../../home/nixvim
     ../../home/hypr
     ../../home/programs
     ../../home/rofi

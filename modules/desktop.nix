@@ -133,6 +133,7 @@
     gzip
     vulkan-tools
     mesa
+    neovim
   ];
   
   # Kitty Config
