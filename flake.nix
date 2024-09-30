@@ -19,6 +19,10 @@
     #  home-manager.inputs.nxpkgs.follows = "nixpkgs";
 
     # Add additional inputs if necessary
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs = inputs @ {
     self,

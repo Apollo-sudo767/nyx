@@ -7,7 +7,7 @@
       ''
         function() vim.highlight.on_yank({ higroup="IncSearch", timeout=250 }) end
       '';
-  } ];
+  }];
 
   globals = { mapleader = " "; };
 
