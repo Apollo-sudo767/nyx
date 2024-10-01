@@ -19,6 +19,8 @@
         polybar
         picom
         nitrogen
+        xorg-server
+        xorg-xinit
      ];
     };
   };
