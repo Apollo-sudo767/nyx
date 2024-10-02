@@ -134,6 +134,7 @@
     vulkan-tools
     mesa
     neovim
+    protontricks
   ];
   
   # Kitty Config
