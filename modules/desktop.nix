@@ -103,6 +103,7 @@
     curl
     git
     sysstat
+    kdePackages.discover
     lm_sensors
     scrot
     fastfetch
@@ -151,7 +152,7 @@
   # Power profiles and policy kit
   services.power-profiles-daemon.enable = true;
   security.polkit.enable = true;
-
+   
   # Services
   services.dbus.packages = [pkgs.gcr];
   services.geoclue2.enable = true;
@@ -162,5 +163,6 @@
     pulse.enable = true;
     jack.enable = true;
   };
+  services.flatpak.enable = true;
   services.udev.packages = with pkgs; [gnome.gnome-settings-daemon];
 }
