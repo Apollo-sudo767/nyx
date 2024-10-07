@@ -103,7 +103,6 @@
     curl
     git
     sysstat
-    kdePackages.discover
     lm_sensors
     scrot
     fastfetch
