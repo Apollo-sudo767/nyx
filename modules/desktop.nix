@@ -149,7 +149,7 @@
   hardware.pulseaudio.enable = false;
 
   # Power profiles and policy kit
-  services.power-profiles-daemon.enable = true;
+  # services.power-profiles-daemon.enable = true; # Battery Daemon replaced by TLP
   security.polkit.enable = true;
    
   # Services

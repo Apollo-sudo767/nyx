@@ -54,28 +54,28 @@
           ];
         };
 
-#      aether = let
-#        username = "hermes"; # another username for this machine
-#        specialArgs = {inherit username;};
-#      in
-#        nixpkgs.lib.nixosSystem {
-#          inherit specialArgs;
-#          system = "x86_64-linux";
-#
-#          modules = [
-#            ./hosts/aether
-#            ./users/${username}/nixos.nix
-#
-#            home-manager.nixosModules.home-manager
-#            {
-#              home-manager.useGlobalPkgs = true;
-#              home-manager.useUserPackages = true;
-#
-#              home-manager.extraSpecialArgs = inputs // specialArgs;
-#              home-manager.users.${username} = import ./users/${username}/home.nix;
-#            }
-#          ];
-#        };
+     hermes = let
+       username = "apollo"; # another username for this machine
+       specialArgs = {inherit username;};
+     in
+       nixpkgs.lib.nixosSystem {
+         inherit specialArgs;
+         system = "x86_64-linux";
+
+         modules = [
+           ./hosts/hermes
+           ./users/${username}/nixos.nix
+           
+           home-manager.nixosModules.home-manager
+           {
+             home-manager.useGlobalPkgs = true;
+             home-manager.useUserPackages = true;
+
+             home-manager.extraSpecialArgs = inputs // specialArgs;
+             home-manager.users.${username} = import ./users/${username}/home.nix;
+           }
+         ];
+       };
     };
   };
 }
