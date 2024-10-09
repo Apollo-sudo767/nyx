@@ -12,15 +12,19 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" = 
-    { device = "/dev/disk/by-uuid/051ffbc0-75e3-42bf-8a35-2431144887b9";
+    { device = "/dev/sda3";
       fsType = "ext4";
     };
   fileSystems."/boot" = 
-    { device = "/dev/disk/by-uuid/578A-AD73";
+    { device = "/dev/sda2";
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
     };
-  swapDevices = [ ];
+  swapDevices = [ 
+    {
+      device = "/dev/sda1"
+    }
+  ];
   
   networking.useDHCP = lib.mkDefault true;
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
