@@ -1,0 +1,35 @@
+ * {
+    background-color: #1c1c1c;    /* Dark base */
+    border-color: #4a4a4a;        /* Darker accent for borders */
+    text-color: #e0e0e0;          /* Light ash beach color */
+    font: "Cinzel 10";
+    border-radius: 10px;
+    border-width: 2px;
+    padding: 10px;
+}
+
+window {
+    background-color: #2b2b2b;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+mainbox {
+    border-radius: 8px;
+}
+
+listview {
+    border-radius: 5px;
+    scrollbar: false;
+}
+
+element {
+    background-color: #333333;
+    border-color: #444444;
+    padding: 5px;
+}
+
+element selected {
+    background-color: #3c3c3c;
+    border-color: #6a6a6a;
+}
