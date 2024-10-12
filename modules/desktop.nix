@@ -62,6 +62,7 @@
       noto-fonts-cjk
       noto-fonts-emoji
       (nerdfonts.override { fonts = ["FiraCode" "JetBrainsMono"]; })
+      cinzel
     ];
     enableDefaultPackages = false;
     fontconfig.defaultFonts = {
