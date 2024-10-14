@@ -136,6 +136,7 @@
     mesa
     neovim
     protontricks
+    libreoffice-qt6-fresh
   ];
   
   # Kitty Config
