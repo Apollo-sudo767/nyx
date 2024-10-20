@@ -37,7 +37,6 @@
 
     # db related
     dbeaver-bin
-    mycli
     pgcli
   ];
 
