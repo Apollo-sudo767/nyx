@@ -10,7 +10,7 @@
       ../../modules/desktop.nix
       ../../modules/hyprland.nix
       ../../modules/i3.nix
-      ../../modules/cosmic.nix
+      # ../../modules/cosmic.nix # Not packaged for nixos yet
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
