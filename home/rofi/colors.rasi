@@ -1,0 +1,10 @@
+configuration {
+    background: #282a36;
+    foreground: #f8f8f2;
+    active-background: 16;
+    active-foreground: #50fa7b;
+    separator: #6272a4;
+    border: #6272a4;
+    urgent-background: #ff5555;
+    urgent-foreground: #ffffff;
+}

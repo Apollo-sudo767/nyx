@@ -1,5 +1,5 @@
 {pkgs, ...}: { 
   services = {
-    desktopmanager.cosmic.enable = true;
+    desktopManager.cosmic.enable = true;
   };
-
+}

@@ -16,7 +16,7 @@
     ../../home/terminals
     ../../home/i3
   ];
-  
+
   programs.git = {
     userName = "Apollo-sudo767";
     userEmail = "blured767@gmail.com";

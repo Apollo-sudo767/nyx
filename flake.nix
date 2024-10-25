@@ -17,6 +17,12 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
     #  home-manager.inputs.nxpkgs.follows = "nixpkgs";
+    
+    # Stylix
+    stylix.url = "github:danth/stylix";
+
+    # Cosmic DE
+    nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";
 
     # Add additional inputs if necessary
     nixvim = {
@@ -28,6 +34,8 @@
     self,
     nixpkgs,
     home-manager,
+    nixos-cosmic,
+    stylix,
     ...
   }: {
     nixosConfigurations = {
@@ -42,7 +50,15 @@
           modules = [
             ./hosts/nyx
             ./users/${username}/nixos.nix
+              {
+                nix.settings = {
+                  substituters = [ "https://cosmic.cachix.org/"];
+                  trusted-public-keys = [ "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE=" ];
+                };
 
+              }
+            stylix.nixosModules.stylix # Importing Stylix Module
+            nixos-cosmic.nixosModules.default
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
