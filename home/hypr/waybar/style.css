@@ -8,7 +8,7 @@
 */
 
 
-@import "gruvbox.css";
+@import "colors.css";
 
 * {
   border: none;
@@ -94,7 +94,7 @@ window#waybar.hidden {
   font-size: 12px;
   transition: none;
   color: #1a1826;
-  background: #F7E7B5;
+  background: #2a3b4f;
 }
 
 #battery {

@@ -37,6 +37,12 @@
         package = pkgs.dejavu_fonts;
         name = "Dejavu Serif";
       };
+      sizes = {
+        applications = 10;
+        desktop = 10;
+        popups = 10;
+        terminal = 12;
+      };
     };
     opacity = {
       applications = 1.0;
