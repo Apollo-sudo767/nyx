@@ -143,6 +143,8 @@
   environment.etc."kitty/kitty.conf".text = ''
     background_opacity 0.8
     '';
+  # Nixpkgs
+  nixpkgs.config.allowUnfree = true;
 
   # Bluetooth
   hardware.bluetooth.enable = true;
