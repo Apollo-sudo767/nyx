@@ -30,9 +30,6 @@
     options = lib.mkDefault "--delete-older-than 7d";
   };
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
   # Time zone and locales
   time.timeZone = "America/Chicago";
   i18n.defaultLocale = "en_US.UTF-8";
