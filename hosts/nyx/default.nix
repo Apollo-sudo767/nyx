@@ -60,6 +60,19 @@
       efiSysMountPoint = "/boot"; # ← use the same mount point here.
     };
     systemd-boot.enable = true;
+    entries = {
+      # Nixos Entry
+      "nixos" = {
+        name = "NixOS";
+        path = "/EFI/nixos/nixos.efi";
+        type = "efi";
+      };
+      "windows" = {
+        name = "Windows 11";
+        path = "/EFI/Microsoft/Boot/bootmgfw.efi";
+        type = "efi";
+      };
+    };
   };
 
   networking.hostName = "nyx"; # Define your hostname.
@@ -68,14 +81,16 @@
   services = {
     xserver = {
       enable = true;
-      layout = "us";
-      xkbVariant = "";
+      xkb = {
+        variant = "";
+        layout = "us";
+      };
       excludePackages = [ pkgs.xterm ];
       videoDrivers = ["nvidia"];
-      libinput.enable = true;
       displayManager = {
         gdm.enable = true;
       };
+    libinput.enable = true;  
     };
     # desktopManager = {
     #   cosmic-greeter.enable = true;

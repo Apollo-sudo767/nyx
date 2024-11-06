@@ -134,6 +134,7 @@
     neovim
     protontricks
     libreoffice-qt6-fresh
+    vlc
   ];
   
   # Kitty Config
