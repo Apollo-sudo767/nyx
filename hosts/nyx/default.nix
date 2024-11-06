@@ -60,19 +60,6 @@
       efiSysMountPoint = "/boot"; # ← use the same mount point here.
     };
     systemd-boot.enable = true;
-    entries = {
-      # Nixos Entry
-      "nixos" = {
-        name = "NixOS";
-        path = "/EFI/nixos/nixos.efi";
-        type = "efi";
-      };
-      "windows" = {
-        name = "Windows 11";
-        path = "/EFI/Microsoft/Boot/bootmgfw.efi";
-        type = "efi";
-      };
-    };
   };
 
   networking.hostName = "nyx"; # Define your hostname.

@@ -23,12 +23,6 @@
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
     };
-  fileSystems."/boot-windows" = 
-    {
-      device = "/dev/disk/by-uuid/6823-22BA";
-      fsType = "vfat";
-      options = [ "nofail" "noauto" ];
-    };
 
   fileSystems."/home/nvme" =
     { device = "/dev/disk/by-uuid/bd61e42b-16e9-4222-9075-d6318db371ca";
