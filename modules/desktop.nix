@@ -135,6 +135,14 @@
     protontricks
     libreoffice-qt6-fresh
     vlc
+    virtualbox
+
+    # Style Packages
+    cava
+    cbonsai
+    cmatrix
+    pipes
+    asciiquarium
   ];
   
   # Kitty Config
