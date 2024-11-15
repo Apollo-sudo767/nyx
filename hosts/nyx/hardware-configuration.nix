@@ -10,8 +10,8 @@
 
   boot.initrd.availableKernelModules = [ "nvme" "ahci" "xhci_pci" "usb_storage" "usbhid" "sd_mod" "sr_mod" ];
   boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-amd" ];
-  boot.extraModulePackages = [ ];
+  boot.kernelModules = [ "kvm-amd" "vboxdrv" "vboxnetflt" "vboxnetadp" ];
+  boot.extraModulePackages = [ config.boot.kernelPackages.virtualbox ];
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/fce8da37-711c-4ca6-b53a-40efb6bbdfab";

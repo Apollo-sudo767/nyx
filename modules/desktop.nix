@@ -8,7 +8,7 @@
   users.users.${username} = {
     isNormalUser = true; # Set to true or false depending on your needs
     description = "${username}";
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = ["networkmanager" "wheel" "vboxusers"];
     group = "${username}"; # This must match the username
   };
 
@@ -136,6 +136,7 @@
     libreoffice-qt6-fresh
     vlc
     virtualbox
+    thunderbird
 
     # Style Packages
     cava
@@ -151,6 +152,12 @@
     '';
   # Nixpkgs
   nixpkgs.config.allowUnfree = true;
+  
+  # Virtualbox
+  virtualisation.virtualbox.host = {
+    enable = true;
+    enableExtensionPack = true;
+  };
 
   # Bluetooth
   hardware.bluetooth.enable = true;
