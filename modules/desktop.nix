@@ -11,7 +11,8 @@
     extraGroups = ["networkmanager" "wheel" "vboxusers"];
     group = "${username}"; # This must match the username
   };
-
+  
+  users.extraGroups.vboxusers.members = [ "apollo" ];
   # Trusted users
   nix.settings.trusted-users = [username];
 
