@@ -120,8 +120,8 @@
     xdg-desktop-portal
     xdg-user-dirs
     xdg-desktop-portal-hyprland 
-    gnome.adwaita-icon-theme
-    gnome.gnome-themes-extra
+    adwaita-icon-theme
+    gnome-themes-extra
     bluez
     pamixer
     playerctl
@@ -140,7 +140,7 @@
     thunderbird
 
     # Style Packages
-    cava
+    # cavalier
     cbonsai
     cmatrix
     pipes
@@ -181,5 +181,5 @@
     jack.enable = true;
   };
   services.flatpak.enable = true;
-  services.udev.packages = with pkgs; [gnome.gnome-settings-daemon];
+  services.udev.packages = with pkgs; [gnome-settings-daemon];
 }

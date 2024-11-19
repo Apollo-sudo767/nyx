@@ -100,8 +100,8 @@
       displayManager = {
         gdm.enable = true;
       };
-    libinput.enable = true;  
     };
+    libinput.enable = true;
     # desktopManager = {
     #   cosmic-greeter.enable = true;
     # };
