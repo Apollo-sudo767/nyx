@@ -3,6 +3,8 @@
 {
   # Define user group
   users.groups.${username} = {};
+  
+
 
   # Define user account
   users.users.${username} = {
@@ -47,21 +49,26 @@
   };
 
   # Printing
-  services.printing.enable = true;
+  services.printing = {
+    enable = true;
+    drivers = [ pkgs.hplipWithPlugin ];
+  };
 
   # Xbox controller support
   hardware.xone.enable = true;
 
   # Fonts
   fonts = {
-    packages = with pkgs; [
-      material-design-icons
-      noto-fonts
-      noto-fonts-cjk-sans
-      noto-fonts-emoji
-      (nerdfonts.override { fonts = ["FiraCode" "JetBrainsMono"]; })
-      cinzel
-    ];
+    packages = with pkgs;  [
+        material-design-icons
+        noto-fonts
+        noto-fonts-cjk-sans
+        noto-fonts-emoji
+        nerd-fonts.jetbrains-mono
+        nerd-fonts.fira-code
+        cinzel
+      ];
+    
     enableDefaultPackages = false;
     fontconfig.defaultFonts = {
       serif = ["Noto Serif" "Noto Color Emoji"];
@@ -136,8 +143,11 @@
     protontricks
     libreoffice-qt6-fresh
     vlc
-    virtualbox
     thunderbird
+    
+    # Drivers
+    hplip
+    hplipWithPlugin
 
     # Style Packages
     # cavalier
@@ -146,19 +156,16 @@
     pipes
     asciiquarium
   ];
-  
+
+  # Home Manager
+  home-manager.backupFileExtension = "backup";
+
   # Kitty Config
   environment.etc."kitty/kitty.conf".text = ''
     background_opacity 0.8
     '';
   # Nixpkgs
   nixpkgs.config.allowUnfree = true;
-  
-  # Virtualbox
-  virtualisation.virtualbox.host = {
-    enable = true;
-    enableExtensionPack = true;
-  };
 
   # Bluetooth
   hardware.bluetooth.enable = true;
