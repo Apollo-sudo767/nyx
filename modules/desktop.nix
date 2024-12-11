@@ -144,6 +144,8 @@
     libreoffice-qt6-fresh
     vlc
     thunderbird
+    ncspot
+    spotify
     
     # Drivers
     hplip
