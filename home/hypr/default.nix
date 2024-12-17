@@ -8,6 +8,8 @@
   home.file.".config/hypr/hypr2.jpg".source = ../../wallpaper/hypr2.jpg;
   home.file.".config/hypr/Space.png".source = ../../wallpaper/Space.png;
   home.file.".config/hypr/hyprland.conf".source = ./hyprland.conf;
+  home.file.".config/hypr/hyprlock.conf".source = ./hyprlock.conf;
+  home.file.".config/hypr/hypridle.conf".source = ./hypridle.conf;
   home.file.".config/waybar/config".source = ./waybar/config;
   home.file.".config/waybar/colors.css".source = ./waybar/colors.css;
   home.file.".config/waybar/gruvbox.css".source = ./waybar/gruvbox.css;
