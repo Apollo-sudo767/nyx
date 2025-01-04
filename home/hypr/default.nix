@@ -10,7 +10,7 @@
   home.file.".config/hypr/hyprblur.png".source = ../../wallpaper/hyprblur.png;
   home.file.".config/hypr/space13.png".source = ../../wallpaper/space13.png;
   home.file.".config/hypr/hyprland.conf".source = ./hyprland.conf;
-  #home.file.".config/hypr/hyprlock.conf".source = ./hyprlock.conf;
+  home.file.".config/hypr/hyprlock.conf".source = ./hyprlock.conf;
   home.file.".config/hypr/hypridle.conf".source = ./hypridle.conf;
   home.file.".config/waybar/config".source = ./waybar/config;
   home.file.".config/waybar/colors.css".source = ./waybar/colors.css;
