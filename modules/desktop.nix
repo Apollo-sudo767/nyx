@@ -4,8 +4,6 @@
   # Define user group
   users.groups.${username} = {};
   
-
-
   # Define user account
   users.users.${username} = {
     isNormalUser = true; # Set to true or false depending on your needs
@@ -98,6 +96,7 @@
       X11Forwarding = true;
       PermitRootLogin = "no";
       PasswordAuthentication = false;
+      UseDns = true;
     };
     openFirewall = true;
   };
