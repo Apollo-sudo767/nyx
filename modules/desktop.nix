@@ -172,7 +172,7 @@
   hardware.bluetooth.enable = true;
   
   # Sound
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
 
   # Power profiles and policy kit
   # services.power-profiles-daemon.enable = true; # Battery Daemon replaced by TLP
