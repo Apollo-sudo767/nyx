@@ -145,6 +145,7 @@
     thunderbird
     ncspot
     spotify
+    waypipe
     
     # Drivers
     hplip
