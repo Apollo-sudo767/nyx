@@ -150,6 +150,7 @@
     # Drivers
     hplip
     hplipWithPlugin
+    numlockx
 
     # Style Packages
     # cavalier
