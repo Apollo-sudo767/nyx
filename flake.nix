@@ -16,28 +16,29 @@
   };
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.11";
     home-manager.url = "github:nix-community/home-manager";
     #  home-manager.inputs.nxpkgs.follows = "nixpkgs";
     
     # Stylix
     stylix.url = "github:danth/stylix";
-
-    # Cosmic DE
-    nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";
-
+    
+    # Server/Nixos-Containers
+    nix-minecraft.url = "github:Infinidoge/nix-minecraft";
     # Add additional inputs if necessary
     nixvim = {
       url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
   };
   outputs = inputs @ {
     self,
-    nixpkgs,
+    nixpkgs-unstable,
+    nixpkgs-stable,
     home-manager,
-    nixos-cosmic,
     stylix,
+    nix-minecraft,
     ...
   }: {
     nixosConfigurations = {
@@ -45,7 +46,7 @@
         username = "apollo";
         specialArgs = {inherit username;};
       in
-        nixpkgs.lib.nixosSystem {
+        nixpkgs-unstable.lib.nixosSystem {
           inherit specialArgs;
           system = "x86_64-linux";
 
@@ -60,7 +61,6 @@
 
               }
             stylix.nixosModules.stylix # Importing Stylix Module
-            nixos-cosmic.nixosModules.default
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
@@ -72,28 +72,29 @@
           ];
         };
 
-        #hermes = let
-        #username = "apollo"; # another username for this machine
-        #specialArgs = {inherit username;};
-        #in
-        #nixpkgs.lib.nixosSystem {
-        # inherit specialArgs;
-        # system = "x86_64-linux";
-        #
-        # modules = [
-        #   ./hosts/hermes
-        #   ./users/${username}/nixos.nix
-        #   
-        #   home-manager.nixosModules.home-manager
-        #   {
-        #     home-manager.useGlobalPkgs = true;
-        #     home-manager.useUserPackages = true;
-        #
-        #     home-manager.extraSpecialArgs = inputs // specialArgs;
-        #     home-manager.users.${username} = import ./users/${username}/home.nix;
-        #   }
-        # ];
-        #};
+        aether = let
+          username = "hermes"; # another username for this machine
+          specialArgs = {inherit username;};
+        in
+          nixpkgs-stable.lib.nixosSystem {
+          inherit specialArgs;
+          system = "x86_64-linux";
+        
+          modules = [
+           ./hosts/aether
+           ./users/${username}/nixos.nix
+
+           nix-minecraft.nixosModules.nix-minecraft
+           home-manager.nixosModules.home-manager
+           {
+             home-manager.useGlobalPkgs = true;
+             home-manager.useUserPackages = true;
+        
+             home-manager.extraSpecialArgs = inputs // specialArgs;
+             home-manager.users.${username} = import ./users/${username}/home.nix;
+           }
+         ];
+        };
     };
   };
 }
