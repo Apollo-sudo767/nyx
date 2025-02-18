@@ -63,7 +63,7 @@
             stylix.nixosModules.stylix # Importing Stylix Module
             home-manager.nixosModules.home-manager
             {
-              home-manager.useGlobalPkgs = true;
+              #home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
 
               home-manager.extraSpecialArgs = inputs // specialArgs;
@@ -85,9 +85,10 @@
            ./users/${username}/nixos.nix
 
            nix-minecraft.nixosModules.nix-minecraft
+           ({ ... }: { specialArgs = { inherit inputs; }; })
            home-manager.nixosModules.home-manager
            {
-             home-manager.useGlobalPkgs = true;
+             #home-manager.useGlobalPkgs = true;
              home-manager.useUserPackages = true;
         
              home-manager.extraSpecialArgs = inputs // specialArgs;
