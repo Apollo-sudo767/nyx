@@ -58,8 +58,8 @@
         noto-fonts
         noto-fonts-cjk-sans
         noto-fonts-emoji
-        nerd-fonts.jetbrains-mono
-        nerd-fonts.fira-code
+      # nerdfonts.jetbrains-mono
+      #nerdfonts.fira-code
         cinzel
       ];
     
@@ -114,13 +114,16 @@
     thunderbird
     ncspot
     waypipe
-    
+    xdg-desktop-portal
+    xdg-user-dirs
+    xdg-desktop-portal-gtk
     # Drivers
     hplip
     hplipWithPlugin
     numlockx
   ];
-
+  
+  # xdg.portal.enable = true;
   # Home Manager
   home-manager.backupFileExtension = "backup";
 
@@ -134,9 +137,6 @@
   # Bluetooth
   hardware.bluetooth.enable = true;
   
-  # Sound
-  services.pulseaudio.enable = false;
-
   # Power profiles and policy kit
   # services.power-profiles-daemon.enable = true; # Battery Daemon replaced by TLP
   security.polkit.enable = true;
@@ -151,6 +151,7 @@
     pulse.enable = true;
     jack.enable = true;
   };
-  services.flatpak.enable = true;
+
+  #services.flatpak.enable = true; # This will stay as a reminder of my mistakes. I DO REPENT
   services.udev.packages = with pkgs; [gnome-settings-daemon];
 }

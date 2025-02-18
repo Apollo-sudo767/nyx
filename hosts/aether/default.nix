@@ -4,7 +4,7 @@
   imports =
     [
       ../../modules/server.nix
-      ../../modules/containers.nix
+      # ../../modules/containers.nix
       ./hardware-configuration.nix
     ];
    
@@ -15,10 +15,11 @@
       efiSysMountPoint = "/boot"; # <- use the same mount point here
     };
     systemd-boot.enable = true;
-    systemd-boot.extraFiles."efi/shell.efi" = "${pkgs.edk-uefi-shell}/shell.efi";
+    systemd-boot.extraFiles."efi/shell.efi" = "${pkgs.edk2-uefi-shell}/shell.efi";
   };
 
   networking.hostName = "aether"; #Define hostname here
+  
   
   #Services
   services = {
@@ -29,7 +30,7 @@
         layout = "us";
       };
     };
-    excludePackages = [ pkgs.xterm ];
+    # excludePackages = [ pkgs.xterm ];
     libinput.enable = true;
     dbus.enable = true;
     tumbler.enable = true;

@@ -25,7 +25,7 @@
     graphviz
 
     # productivity
-    obsidian
+    # obsidian
 
 
    

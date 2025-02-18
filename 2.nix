@@ -53,6 +53,7 @@
           modules = [
             ./hosts/nyx
             ./users/${username}/nixos.nix
+            ./modules/containers.nix
               {
                 nix.settings = {
                   substituters = [ "https://cosmic.cachix.org/"];
@@ -74,7 +75,10 @@
 
         aether = let
           username = "hermes"; # another username for this machine
-          specialArgs = {inherit username;};
+          specialArgs = {
+            inherit username;
+            inherit inputs;
+          };
         in
           nixpkgs-stable.lib.nixosSystem {
           inherit specialArgs;
@@ -83,9 +87,10 @@
           modules = [
            ./hosts/aether
            ./users/${username}/nixos.nix
+              #(import ./modules/containers.nix { inherit inputs; })
 
-              #nix-minecraft.nixosModules.nix-minecraft
-           # ({ ... }: { specialArgs = { inherit inputs; }; })
+           nix-minecraft.nixosModules.nix-minecraft
+              #({ ... }: { specialArgs = { inherit inputs; }; })
            home-manager.nixosModules.home-manager
            {
              #home-manager.useGlobalPkgs = true;
