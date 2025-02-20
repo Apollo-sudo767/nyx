@@ -38,7 +38,6 @@
     nixpkgs-stable,
     home-manager,
     stylix,
-    nix-minecraft,
     ...
   }: {
     nixosConfigurations = {
@@ -74,7 +73,7 @@
 
         aether = let
           username = "hermes"; # another username for this machine
-          specialArgs = {inherit username;};
+          specialArgs = {inherit username inputs;};
         in
           nixpkgs-stable.lib.nixosSystem {
           inherit specialArgs;
