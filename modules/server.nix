@@ -8,7 +8,7 @@
   users.users.${username} = {
     isNormalUser = true; # Set to true or false depending on your needs
     description = "${username}";
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = ["networkmanager" "wheel" "docker"];
     group = "${username}"; # This must match the username
   };
   
@@ -76,6 +76,8 @@
   programs = {
     dconf.enable = true;
   };
+  #Docker
+  virtualisation.docker.enable = true;
 
   # SSH
   services.openssh = {
@@ -151,7 +153,9 @@
     pulse.enable = true;
     jack.enable = true;
   };
-
+  
+  # LightDM
+  services.xserver.displayManager.lightdm.enable = false;
   #services.flatpak.enable = true; # This will stay as a reminder of my mistakes. I DO REPENT
   services.udev.packages = with pkgs; [gnome-settings-daemon];
 }
