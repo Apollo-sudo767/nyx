@@ -4,6 +4,7 @@
   imports =
     [
       ../../modules/server.nix
+      ../../modules/minecraft.nix
       # ../../modules/containers.nix
       ./hardware-configuration.nix
     ];
@@ -39,6 +40,17 @@
   # Enable networking
   networking.networkmanager.enable = true;
   networking.defaultGateway = "192.168.1.254";
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = [ 25565 ];
+    allowedUDPPorts = [ 25565 ];
+  };
+  networking.interfaces.enp3s0.ipv4.addresses = [
+    {
+      address = "192.168.1.170";
+      prefixLength = 24;
+    }
+  ];
 
   system.stateVersion = "24.11";
 }

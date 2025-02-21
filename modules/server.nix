@@ -123,6 +123,9 @@
     hplip
     hplipWithPlugin
     numlockx
+    docker
+    tmux
+    kitty
   ];
   
   # xdg.portal.enable = true;
@@ -153,7 +156,20 @@
     pulse.enable = true;
     jack.enable = true;
   };
+
+  # Terminal for ssh
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
+    enableZshIntegration = true;
+  };
   
+  # programs.kitty.enable = true;
+  
+  programs.starship = {
+    enable = true;
+  };
+
   # LightDM
   services.xserver.displayManager.lightdm.enable = false;
   #services.flatpak.enable = true; # This will stay as a reminder of my mistakes. I DO REPENT
